@@ -195,20 +195,20 @@ app.use((req, res) => {
 });
 
 // Local development only
-if (!process.env.VERCEL) {
-  const PORT = Number(process.env.PORT || 5000);
+// if (!process.env.VERCEL) {
+//   const PORT = Number(process.env.PORT || 5000);
 
-  connectDB()
-    .then(() => {
-      app.listen(PORT, () => {
-        console.log(`GrowSaathi API running on port ${PORT}`);
-      });
-    })
-    .catch((error) => {
-      console.error('Startup failed:', error.message);
-      process.exitCode = 1;
-    });
-}
+//   connectDB()
+//     .then(() => {
+//       app.listen(PORT, () => {
+//         console.log(`GrowSaathi API running on port ${PORT}`);
+//       });
+//     })
+//     .catch((error) => {
+//       console.error('Startup failed:', error.message);
+//       process.exitCode = 1;
+//     });
+// }
 
 // Export Express app for Vercel
 export default app;
